@@ -1,20 +1,41 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+---
+team: Implementation Team
+project: Direct Mail sample
+maintainer: Александр Шачнев
+wiki: https://tfs/tfs/CC_Collection/CustomersCanvas/_wiki/wikis/Integration/5382/Direct-Mail-Sample-App
+status: Разработка
+---
+# Direct Mail sample
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+_Краткое описание проекта (1-2 предложения)._
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Прежде чем начать
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+Убедитесь, что на вашей машине установлено следующее ПО.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+- Для сборки - ... _(например, NodeJS 16.16 или выше)_.
+- Для запуска - _(например, любая редакция SQL Server, MongoDB 4.0+)_.
+- Для использования Docker - актуальная версия [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
+## Сборка
+
+Перейдите в корень проекта и выполните:
+
+    ```
+    ...
+    ```
+
+> Машина, на которой производится сборка, должна иметь доступ к NuGet-репозиторию http://gmbuildserver/nuget/nuget / npm-репозиторию http://customerscanvas:4873/ 
+
+## Тесты
+
+...
+
+## Создание Docker-образа
+
+...
+
+## Запуск Docker-образа
+
+...
+

@@ -1,0 +1,82 @@
+version: "3.9"
+
+volumes:
+  local_postgres_data: {}
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:16rc1-alpine3.18
+    environment:
+      - 'POSTGRES_PASSWORD=<POSTGRES_PASSWORD>'
+      - 'PGUSER=postgres'
+    restart: unless-stopped
+    networks:
+      - postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+        test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
+        interval: 5s
+        timeout: 10s
+        retries: 120
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4:7.5
+    environment:
+      PGADMIN_DEFAULT_EMAIL: '<YOUR_EMAIL>'
+      PGADMIN_DEFAULT_PASSWORD: '<MASTER_PG_ADMIN_PASSWORD>'
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - '5057:80'
+    restart: unless-stopped
+    networks:
+      - internet
+      - postgres
+
+  app:
+    build:
+      context: ./Backend
+      dockerfile: ./Dockerfile
+    container_name: tmw-backend-sample
+    image: tmw--backend-sample:0.0.1
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=postgres;Port=5432;UserId=postgres;Password=<POSTGRES_PASSWORD>;Database=AurigmaDirectMailDb;
+      - EntityFramework__EnableSensitiveDataLogging=false
+      - CustomersCanvas__ApiGatewayUrl=<CUSTOMERS_CANVAS_API_URL>
+      - CustomersCanvas__TenantId=<YOUR_TENANT_ID_FROM_CUSTOMERS_CANVAS>
+      - CustomersCanvas__StorefrontId=<YOUR_STOREFRONT_ID_FROM_CUSTOMERS_CANVAS>
+      - CustomersCanvas__ClientId=<YOUR_EXTERNAL_APP_CLIENT_ID_FROM_CUSTOMERS_CANVAS>
+      - CustomersCanvas__ClientSecret=<YOUR_EXTERNAL_APP_CLIENT_SECRET_FROM_CUSTOMERS_CANVAS>
+    ports:
+      - '8092:8080'
+    depends_on:
+        postgres:
+            condition: service_healthy
+    networks:
+      - internet
+      - postgres
+
+  front:
+    build:
+      context: ./Frontend
+      dockerfile: ./Dockerfile
+      args:
+        - BASE_URL=<BASE_BACKEND_API_URL_FROM_GLOBAL_WEB>
+    container_name: tmw-frontend-sample
+    image: tmw-frontend-sample:0.0.1
+    networks:
+      - internet
+    ports:
+      - '8091:3000'
+      - '4431:443'
+
+
+networks:
+  internet:
+    name: internet
+    driver: bridge
+  postgres:
+    name: postgres
+    driver: bridge

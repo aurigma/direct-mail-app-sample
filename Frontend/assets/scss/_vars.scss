@@ -1,0 +1,95 @@
+$pages-background: #efefef;
+$layout-header-background: #ffffff;
+
+$head-title-text: #282828;
+
+// form field
+$form-field-default-border: #aeb3b7;
+$form-field-default-border-hover: #808080;
+$form-field-focus-shadow: #00000066;
+$form-field-active-boder: #cccccc;
+$form-field-disabled-background: #e0e0e0;
+$form-field-disabled-border: #e0e0e0;
+$form-field-error-border: #ff5252;
+
+$form-icon-left: #cccccc;
+
+// button
+$button-base-primary-default: #0090ff;
+$button-base-primary-hover: #0072e0;
+$button-base-disabled-primary-background: #e0e0e0;
+
+$button-base-primary-blue-default: #0066ff;
+$button-base-primary-blue-hover: #0066ff;
+$button-base-disabled-blue-primary-background: #eff0f0;
+
+$button-base-secondary-default: #ffffff;
+$button-base-secondary-border-default: #cccccc;
+$button-base-secondary-text-color-default: #666666;
+$button-base-secondary-border-hover: #808080;
+$button-base-secondary-text-color-hover: #282828;
+$button-base-secondary-border-disabled: #adadad;
+
+$button-base-tretiary-border-default: #cccccc;
+$button-base-tretiary-text-color-default: #666666;
+$button-base-tretiary-border-hover: #808080;
+$button-base-tretiary-text-color-hover: #282828;
+$button-base-tretiary-border-disabled: #adadad;
+
+$button-base-ghost-text-color-default: #0b3b60;
+$button-base-ghost-text-color-hover: #29597e;
+
+$button-base-focus-shadow: #00000066;
+
+$button-base-disabled-text-color: #a7a7a7;
+
+// table
+$table-border: #e0e0e0;
+$table-background-line-1: #ffffff;
+$table-background-line-2: #ffffff;
+$table-body-text: #304050;
+$table-head-text: #808080;
+
+// badge
+$badge-live: unset;
+$badge-live-text: #04972c;
+
+$badge-completed: unset;
+$badge-completed-text: #04972c;
+
+$badge-new: unset;
+$badge-new-text: #1976d2;
+
+$badge-failed: unset;
+$badge-failed-text: #e81f76;
+
+$badge-in-progress: unset;
+$badge-in-progress-text: #c36900;
+
+$badge-discarded: unset;
+$badge-discarded-text: #666666;
+
+// tab
+$tab-bg-default: unset;
+$tab-border-default: unset;
+$tab-text-default: #666666;
+
+$tab-bg-active: unset;
+$tab-border-active: unset;
+$tab-text-active: #0090ff;
+
+$tab-bg-check: unset;
+$tab-border-check: unset;
+$tab-text-check: #0090ff;
+
+// toggle
+
+// checkbox
+
+// radio button
+
+// sidebar tab
+
+// dropdown
+
+// tooltip

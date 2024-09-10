@@ -1,0 +1,20 @@
+## file extensions
+*.*
+!*.html
+!*.scss
+!*.css
+!*.js
+!*.json
+!*.jsx
+!*.less
+!*.md
+!*.mdx
+!*.ts
+!*.tsx
+!*.yml
+
+# ignore
+node_modules/**/*.*
+documentation/**/*.*
+dist/**/*.*
+coverage/**/*.*

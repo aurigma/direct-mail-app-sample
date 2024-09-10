@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@import "_vars";
+@import "_reset";
+
+body {
+  font-family: "Inter";
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px;
+}
+
+// animation: fade
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// animation: move-down
+.move-down-enter-active,
+.move-down-leave-active {
+  transition: all 0.3s;
+}
+
+.move-down-enter-from {
+  transform: translateY(-3rem);
+  opacity: 0;
+}
+.move-down-enter-to {
+  transform: translateY(0);
+  opacity: 1;
+}
+.move-down-leave-from {
+  transform: translateY(0);
+  opacity: 1;
+}
+.move-down-leave-to {
+  transform: translateY(-1.75rem);
+  opacity: 0;
+}
+
+// animation: move-left
+.move-left-enter-active,
+.move-left-leave-active {
+  transition: all 0.3s;
+}
+
+.move-left-enter-from {
+  transform: translateX(3rem) translateY(0);
+  opacity: 0;
+}
+.move-left-enter-to {
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+}
+.move-left-leave-from {
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+}
+.move-left-leave-to {
+  transform: translateX(0) translateY(3rem);
+  opacity: 0;
+}

@@ -1,0 +1,180 @@
+@mixin button-colors(
+  $default-border,
+  $hover-border,
+  $active-border,
+  $disabled-border,
+  $default,
+  $default-text,
+  $hover,
+  $hover-text,
+  $active,
+  $active-text,
+  $disabled,
+  $disabled-text,
+  $focus-shadow
+) {
+  background-color: $default;
+  color: $default-text;
+  border: 2px solid $default-border;
+
+  &:hover {
+    border: 2px solid $hover-border;
+    background-color: $hover;
+    color: $hover-text;
+  }
+
+  &:active {
+    border: 2px solid $active-border;
+    background-color: $active;
+    color: $active-text;
+  }
+
+  &:disabled {
+    border: 2px solid $disabled-border;
+    background-color: $disabled;
+    color: $disabled-text;
+    cursor: not-allowed;
+    pointer-events: all;
+  }
+
+  &:focus {
+    outline: unset;
+    box-shadow: 0 0 1px 2px $focus-shadow;
+  }
+}
+
+@mixin button-base {
+  .button-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    border-radius: 4px;
+    padding: 9px 16px;
+
+    cursor: pointer;
+
+    &__icon-left {
+      margin: 0 10px 0 0;
+    }
+
+    &__primary {
+      @include button-colors(
+        $button-base-primary-default,
+        $button-base-primary-hover,
+        $button-base-primary-default,
+        $button-base-disabled-primary-background,
+        $button-base-primary-default,
+        white,
+        $button-base-primary-hover,
+        white,
+        $button-base-primary-default,
+        white,
+        $button-base-disabled-primary-background,
+        $button-base-disabled-text-color,
+        $button-base-focus-shadow
+      );
+    }
+
+    &__primary-blue {
+      @include button-colors(
+        $button-base-primary-blue-default,
+        $button-base-primary-blue-hover,
+        $button-base-primary-blue-hover,
+        $button-base-disabled-primary-background,
+        $button-base-primary-blue-default,
+        white,
+        $button-base-primary-blue-hover,
+        white,
+        $button-base-primary-blue-default,
+        white,
+        $button-base-disabled-primary-background,
+        $button-base-disabled-text-color,
+        $button-base-focus-shadow
+      );
+    }
+
+    &__secondary {
+      @include button-colors(
+        $button-base-secondary-border-default,
+        $button-base-secondary-border-hover,
+        $button-base-secondary-border-default,
+        $button-base-secondary-border-disabled,
+        $button-base-secondary-default,
+        $button-base-secondary-text-color-default,
+        $button-base-secondary-default,
+        $button-base-secondary-text-color-default,
+        $button-base-secondary-default,
+        $button-base-secondary-text-color-default,
+        $button-base-secondary-default,
+        $button-base-disabled-text-color,
+        $button-base-focus-shadow
+      );
+    }
+
+    &__tretiary {
+      @include button-colors(
+        $button-base-tretiary-border-default,
+        $button-base-tretiary-border-hover,
+        $button-base-tretiary-border-default,
+        $button-base-tretiary-border-disabled,
+        unset,
+        $button-base-tretiary-text-color-default,
+        unset,
+        $button-base-tretiary-text-color-default,
+        unset,
+        $button-base-tretiary-text-color-default,
+        unset,
+        $button-base-disabled-text-color,
+        $button-base-focus-shadow
+      );
+    }
+
+    &__ghost {
+      @include button-colors(
+        unset,
+        unset,
+        unset,
+        unset,
+        unset,
+        $button-base-ghost-text-color-default,
+        unset,
+        $button-base-ghost-text-color-default,
+        unset,
+        $button-base-ghost-text-color-default,
+        unset,
+        $button-base-disabled-text-color,
+        $button-base-focus-shadow
+      );
+      text-transform: unset;
+    }
+
+    &__icon {
+      @include button-colors(
+        unset,
+        unset,
+        unset,
+        unset,
+        unset,
+        $button-base-ghost-text-color-default,
+        unset,
+        $button-base-ghost-text-color-default,
+        unset,
+        $button-base-ghost-text-color-default,
+        unset,
+        $button-base-disabled-text-color,
+        $button-base-focus-shadow
+      );
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 12px 12px 12px 12px;
+    }
+  }
+}

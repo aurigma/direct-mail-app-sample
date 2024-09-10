@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<ImplicitUsings>disable</ImplicitUsings>
+	<Nullable>disable</Nullable>
+  </PropertyGroup>
+	
+	<PropertyGroup>
+		<NoWarn>NU1803;1591</NoWarn>
+		<PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	
+  <ItemGroup>
+	<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\Aurigma.DirectMail.Sample.DAL.EFCore\Aurigma.DirectMail.Sample.DAL.EFCore.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>

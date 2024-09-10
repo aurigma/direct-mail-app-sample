@@ -1,0 +1,6 @@
+@mixin error-style() {
+  label.error-message {
+    color: red;
+    background: white;
+  }
+}

@@ -1,0 +1,98 @@
+.specific {
+  .carousel__track {
+    transform: none !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  td,
+  th {
+    padding-left: 23px !important;
+    padding-right: 23px !important;
+  }
+
+  table {
+    tbody > tr > td > div > p.text-gray-900 {
+      color: #282828 !important;
+    }
+
+    thead {
+      tr {
+        border-bottom: 1px solid $table-border;
+        position: sticky;
+        top: 0;
+        background: white;
+
+        th span {
+          font-family: "Inter", sans-serif !important;
+          color: $table-head-text;
+          font-weight: 400;
+          font-size: 18px;
+        }
+      }
+    }
+
+    tbody {
+      border-top: none;
+
+      tr {
+        background: $table-background-line-2;
+        border-bottom: 1px solid $table-border;
+        border-top: none;
+
+        &:nth-child(2n) {
+          background: $table-background-line-1;
+        }
+
+        td {
+          font-family: "Inter", sans-serif !important;
+          color: $table-body-text !important;
+          border-bottom: 1px solid $table-border;
+          font-weight: 400;
+          font-size: 18px;
+        }
+
+        td.modification-for-project {
+          &:nth-last-child(-n + 2) {
+            width: 120px;
+          }
+
+          &:last-child {
+            width: 90px;
+          }
+        }
+
+        td.modification-for-job-history {
+          &:nth-last-child(-n + 2) {
+            width: 150px;
+          }
+
+          &:last-child {
+            width: 160px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.recipients-table {
+  td,
+  th {
+    min-width: 250px;
+    padding: 12px 23px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  td {
+    font-weight: 400;
+    color: #282828;
+  }
+
+  th {
+    font-weight: 600;
+    color: #686868;
+  }
+}

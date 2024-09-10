@@ -1,0 +1,9 @@
+{
+    "name": "tools",
+    "scripts": {},
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "nswag": "13.18.2"
+    }
+}

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Aurigma.AssetProcessor.ApiClient" Version="2.54.1.22112" />
+	<PackageReference Include="Aurigma.AssetStorage.ApiClient" Version="2.52.1.21762" />
+	<PackageReference Include="Aurigma.DesignAtoms.Model" Version="7.0.10" />
+	<PackageReference Include="Aurigma.DesignAtomsApi.ApiClient" Version="2.52.1.21764" />
+	<PackageReference Include="Aurigma.StorefrontApi.ApiClient" Version="2.39.1.21934" />
+	<PackageReference Include="AutoMapper" Version="13.0.1" />
+	<PackageReference Include="AutoMapper.Extensions.EnumMapping" Version="3.2.0" />
+	<PackageReference Include="IdentityModel" Version="6.2.0" />
+	<PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	<PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.DomainEntities\Aurigma.DirectMail.Sample.DomainEntities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<Nullable>disable</Nullable>
+	<ImplicitUsings>disable</ImplicitUsings>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<OutputPath>bin\</OutputPath>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<OutputPath>bin\</OutputPath>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<NoWarn>NU1803;1591</NoWarn>
+		<PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	</PropertyGroup>
+	
+
+  <ItemGroup>
+	<PackageReference Include="Aurigma.AssetProcessor.ApiClient" Version="2.54.1.22112" />
+	<PackageReference Include="Aurigma.AssetStorage.ApiClient" Version="2.52.1.21762" />
+	<PackageReference Include="Aurigma.DesignAtomsApi.ApiClient" Version="2.52.1.21764" />
+	<PackageReference Include="Aurigma.StorefrontApi.ApiClient" Version="2.39.1.21934" />
+	<PackageReference Include="AutoMapper" Version="13.0.1" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="NLog" Version="5.2.8" />
+	<PackageReference Include="NLog.Schema" Version="5.2.8" />
+	<PackageReference Include="NLog.Web.AspNetCore" Version="5.3.8" />
+	<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+	<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.5.0" />
+	<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+	<PackageReference Include="System.Collections" Version="4.3.0" />
+	<PackageReference Include="System.IO.Abstractions" Version="20.0.28" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Folder Include="Helpers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.App\Aurigma.DirectMail.Sample.App.csproj" />
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.DAL.EFCore\Aurigma.DirectMail.Sample.DAL.EFCore.csproj" />
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.DAL.FileSystem\Aurigma.DirectMail.Sample.DAL.FileSystem.csproj" />
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.DAL.Postgres\Aurigma.DirectMail.Sample.DAL.Postgres.csproj" />
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.DomainEntities\Aurigma.DirectMail.Sample.DomainEntities.csproj" />
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.WebApi\Aurigma.DirectMail.Sample.WebApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="App_Data\Recipients\recipientImageRecipient.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="App_Data\Recipients\recipients.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App_Data\PrivateImages\image-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

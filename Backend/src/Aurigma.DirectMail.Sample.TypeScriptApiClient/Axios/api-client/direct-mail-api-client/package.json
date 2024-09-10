@@ -1,0 +1,42 @@
+{
+  "name": "@aurigma/axios-direct-mail-sample-api-client",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN License.md",
+  "description": "Axios API Client for Direct Mail sample",
+  "author": "Aurigma Inc <info@aurigma.com> (https://customerscanvas.com)",
+  "keywords": [
+    "customer's canvas",
+    "web-to-print",
+    "api client"
+  ],
+  "homepage": "https://customerscanvas.com",
+  "bugs": "https://customerscanvas.com/account/cases",
+  "scripts": {
+    "build:esm": "./node_modules/.bin/tsc -p tsconfig.json",
+    "build:cjs": "./node_modules/.bin/tsc -p tsconfig-cjs.json",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:ci": "npm ci --registry=http://customerscanvas:4873 --prefer-offline --no-audit --progress=false && npm run build && npm run package",
+    "package": "node ./build/build.js",
+    "version": "npm version"
+  },
+  "types": "./dist/esm/direct-mail-api-client.d.ts",
+  "main": "./dist/cjs/direct-mail-api-client.js",
+  "module": "./dist/esm/direct-mail-api-client.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "require": "./dist/cjs/direct-mail-api-client.js",
+    "import": "./dist/esm/direct-mail-api-client.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "axios": "^0.24.0",
+    "npm": "^6.13.6"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.10",
+    "fs-extra": "^10.0.0",
+    "typescript": "^4.5.2"
+  }
+}

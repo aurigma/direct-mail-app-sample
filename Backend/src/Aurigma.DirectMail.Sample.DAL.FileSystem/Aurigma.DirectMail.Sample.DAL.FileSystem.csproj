@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="TestableIO.System.IO.Abstractions" Version="20.0.28" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.App\Aurigma.DirectMail.Sample.App.csproj" />
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.DomainEntities\Aurigma.DirectMail.Sample.DomainEntities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,41 @@
+@mixin badge-color($badge-bg, $badge-text) {
+  background: $badge-bg;
+  color: $badge-text;
+}
+
+@mixin base-badge() {
+  .base-badge {
+    display: flex;
+    align-items: center;
+
+    &__title {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    &__live {
+      @include badge-color($badge-live, $badge-live-text);
+    }
+
+    &__completed {
+      @include badge-color($badge-completed, $badge-completed-text);
+    }
+
+    &__new {
+      @include badge-color($badge-new, $badge-new-text);
+    }
+
+    &__failed {
+      @include badge-color($badge-failed, $badge-failed-text);
+    }
+
+    &__inprogress {
+      @include badge-color($badge-in-progress, $badge-in-progress-text);
+    }
+
+    &__discarded {
+      @include badge-color($badge-discarded, $badge-discarded-text);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "outDir": "dist/esm",
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": [
+            "ESNext","es2018", "dom"
+        ],
+        "sourceMap": true,
+        "declaration": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<ImplicitUsings>disable</ImplicitUsings>
+	<Nullable>disable</Nullable>
+  </PropertyGroup>
+	
+	<PropertyGroup>
+		<NoWarn>NU1803;1591</NoWarn>
+		<PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	
+  <ItemGroup>
+	<PackageReference Include="AutoMapper" Version="13.0.1" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+  </ItemGroup>
+	
+  <ItemGroup>
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.App\Aurigma.DirectMail.Sample.App.csproj" />
+	<ProjectReference Include="..\Aurigma.DirectMail.Sample.DomainEntities\Aurigma.DirectMail.Sample.DomainEntities.csproj" />
+  </ItemGroup>
+
+</Project>
